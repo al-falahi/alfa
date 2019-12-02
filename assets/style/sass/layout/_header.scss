@@ -1,0 +1,128 @@
+.header {
+  &-top {
+    background-color: $header-top-background-color;
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
+  &-bottom {
+    background-color: $header-bottom-background-color;
+    @media (max-width: 700px) {
+      display: none;
+    }
+    nav {
+      ul {
+        display: flex;
+        list-style: none;
+        @media (max-width: 700px) {
+          display: block;
+        }
+        li {
+          padding: 1rem 1.5rem;
+          a {
+            text-decoration: none;
+            color: $link-color;
+            text-transform: uppercase;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px transparent solid;
+            transition: border-color 0.5s;
+            &:hover {
+              border-color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Desktop
+.desktop-show {
+  @media (max-width: 700px) {
+    display: none;
+  }
+}
+
+// Mobile
+.mobile-show {
+  width: 100vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  @media (min-width: 700px) {
+    display: none;
+  }
+}
+#menu-btn {
+  background-color: $menu-background-color;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 99999;
+  @media (min-width: 700px) {
+    display: none;
+  }
+  .menu-btn-span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    background: #cdcdcd;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s, opacity 0.55s ease;
+  }
+}
+
+#mobile-links {
+  display: block;
+  position: absolute;
+  background-color: $menu-background-color;
+  width: 100%;
+  top: -100%;
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+}
+
+.current-menu-item {
+  a {
+    border-bottom: 2px solid $primary-color !important;
+  }
+}
+.menu-item-has-children {
+  @media (max-width: 700px) {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  @media (min-width: 700px) {
+    position: relative;
+    .sub-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: $header-bottom-background-color;
+      width: 100px;
+      display: none;
+      // li {
+      //   padding: 0.7rem 1rem !important;
+      // }
+    }
+    &:hover .sub-menu {
+      display: block;
+      a {
+        border-bottom: none !important;
+      }
+    }
+  }
+}
+
+.menu li:last-child {
+  padding-right: 0;
+}

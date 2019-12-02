@@ -1,0 +1,18 @@
+.footer {
+  color: $primary-color;
+  &-top {
+    background-color: $footer-top-background-color;
+  }
+  &-bottom {
+    background-color: $footer-bottom-background-color;
+    &--center {
+      p.copyright {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.copy-right {
+  color: $primary-color;
+}

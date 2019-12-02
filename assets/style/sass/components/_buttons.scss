@@ -1,0 +1,34 @@
+%btn-shared {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.btn {
+  @extend %btn-shared;
+  &-primary {
+    background-color: $primary-color;
+    color: set-text-color($primary-color);
+    background-color: lighten($primary-color, 10%);
+  }
+  &-secondary {
+    background-color: $secondary-color;
+    color: set-text-color($secondary-color);
+    background-color: darken($secondary-color, 10%);
+  }
+  &-light {
+    background-color: $light-color;
+    color: set-text-color($light-color);
+    &:hover {
+      background-color: darken($light-color, 10%);
+    }
+  }
+  &-dark {
+    background-color: $dark-color;
+    color: set-text-color($dark-color);
+    background-color: lighten($dark-color, 10%);
+  }
+}
