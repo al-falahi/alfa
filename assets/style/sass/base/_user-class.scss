@@ -28,6 +28,15 @@
   text-align: center;
 }
 
+.d-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
 .d-flex {
   display: flex;
   flex-wrap: wrap;

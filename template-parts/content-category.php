@@ -1,17 +1,17 @@
 <div class="d-flex">
 <!-- Content  -->
-<main class="main flex-3" role="main">
+<main class="main flex-3 d-grid" role="main">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
         <article id="post-<?php the_ID();?>" <?php post_class();?>>
-        <div class="d-flex my-1 card">
+        <div class="my-1 card">
         <?php if ( has_post_thumbnail() ) : ?>
-        <div class="thumbnail flex-1">
+        <div class="thumbnail">
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
           <?php the_post_thumbnail(); ?>
             </a>
             </div>
           <?php endif; ?> <!-- thumbnail -->
-          <div class="post flex-3 p-1"> 
+          <div class="post p-1"> 
         <div class="entry-header">
           <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
           </div><!-- .entry-header-->
